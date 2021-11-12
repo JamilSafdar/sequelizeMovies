@@ -11,3 +11,14 @@ exports.addMovie = async (movieObj) => {
       console.log(error);
     }
   };
+
+  exports.listMovies = async () => {
+    try {
+        await Movie.sync();
+        const list = await Movie.findAll();
+          console.log(list);
+ 
+    } catch (error) {
+        console.log(error);
+    }
+};
